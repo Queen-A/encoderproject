@@ -1,4 +1,5 @@
 var letters = {
+  64: "z",
   65:" a",
   66: "b",
   67: "c",
@@ -27,14 +28,14 @@ var letters = {
   90: "z",
 }
 
-$ ("#inputArea").keydown(function (e) {
+$("#inputArea").keydown(function (e) {
 
   if($("input:checked").val() == "echo") {
     $("#textArea").append(letters[e.keyCode]);
   }
   //allowing the echoing text to work only when the echo button is clicked
   else if ($("input:checked").val() == "caesar cipher") {
-
+    $("#textArea").append(letters[e.keyCode -1]);
   }
 
   else if($("input:checked").val() == "heiroglyphics") {
