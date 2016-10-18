@@ -1,6 +1,6 @@
 var letters = {
   64: "z",
-  65:" a",
+  65: "a",
   66: "b",
   67: "c",
   68: "d",
@@ -31,15 +31,15 @@ var letters = {
 $("#inputArea").keydown(function (e) {
 
   if($("input:checked").val() == "echo") {
-    $("#textArea").append(letters[e.keyCode]);
+    $('#textArea').append(letters[e.keyCode]);
   }
   //allowing the echoing text to work only when the echo button is clicked
   else if ($("input:checked").val() == "caesar cipher") {
-    $("#textArea").append(letters[e.keyCode -1]);
+    $('#textArea').append(letters[e.keyCode -1]);
   }
 
   else if($("input:checked").val() == "heiroglyphics") {
-
+      $('#textArea').append("<img src= 'images/heiroglyphics/" + letters[e.keyCode] + ".gif'>");
   }
 
 });
