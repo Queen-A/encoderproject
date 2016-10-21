@@ -72,3 +72,4 @@ $("#translationInputArea").keydown(function (e) {
     }
   }
 });
+// implementing the caesar cipher decoder in place and accessing charCodeAt
