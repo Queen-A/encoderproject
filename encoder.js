@@ -26,7 +26,9 @@ var letters = {
   88: "x",
   89: "y",
   90: "z",
+  91: "a",
 }
+//creating a object that changer the numbes to letters
 
 $("#inputArea").keydown(function (e) {
 
@@ -37,16 +39,36 @@ $("#inputArea").keydown(function (e) {
   else if ($("input:checked").val() == "caesar cipher") {
     $('#textArea').append(letters[e.keyCode -1]);
   }
-
+  //implementing the caesar cipher in order to display the caesar cipher on the website
   else if($("input:checked").val() == "heiroglyphics") {
       $('#textArea').append("<img src= 'images/heiroglyphics/" + letters[e.keyCode] + ".gif'>");
   }
-
+  //implementing heiroglyphics into the code in pder to show the heiroglyphics
+  else if($("input:checked").val() == "runes") {
+      $('#textArea').append("<img src= 'images/runes/" + letters[e.keyCode] + ".gif'>");
+  }
+//implementing runes into the code in pder to show the runes on the website
 });
-//Allowing the buttons to echo
+
 
 $("input[type='radio']").click(function() {
   $("input:checked").prop('checked', false);
   $(this).prop('checked', true)
 })
 //Allowing a user to move each of the buttons
+var messageToDecode;
+
+$("#translationInputArea").keydown(function (e) {
+  if (e.keyCode == 13) {
+
+    messageToDecode = $("#translationInputText").val()
+    var messageArray = messageToDecode.split("")
+
+    for (var i = 0; i < messageArray.length; i++) {
+      //messageArray[i]
+
+    var translatedNumber = messageArray[i].charCodeAt(0)-32 + 1;
+    $('#translationArea').append(letters[translatedNumber]);
+    }
+  }
+});
